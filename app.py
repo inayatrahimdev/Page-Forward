@@ -6,7 +6,7 @@ from datetime import datetime
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 
 app = Flask(__name__)
-app.secret_key = "pageforward_secret_key"  # Used for flash messages
+app.secret_key = os.getenv("SECRET_KEY", "pageforward_secret_key")  # Use environment variable for secret key
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'pdf', 'doc', 'docx'}
 
@@ -235,6 +235,26 @@ def logout():
 if __name__ == '__main__':
     with app.app_context():
         init_db()  # Initialize the database
-    app.run(host='0.0.0.0', port=10000, debug=True)
+    # Use Gunicorn for production
+    from gunicorn.app.base import BaseApplication
 
+    class StandaloneApplication(BaseApplication):
+        def __init__(self, app, options=None):
+            self.options = options or {}
+            self.application = app
+            super().__init__()
 
+        def load_config(self):
+            config = {key: value for key, value in self.options.items()
+                      if key in self.cfg.settings and value is not None}
+            for key, value in config.items():
+                self.cfg.set(key.lower(), value)
+
+        def load(self):
+            return self.application
+
+    options = {
+        'bind': f"0.0.0.0:{os.getenv('PORT', 10000)}",
+        'workers': 2,
+    }
+    StandaloneApplication(app, options).run()
