@@ -6,7 +6,7 @@ from datetime import datetime
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 
 app = Flask(__name__)
-app.secret_key = os.getenv("SECRET_KEY", "pageforward_secret_key")  # Use environment variable for secret key
+app.secret_key = os.getenv("SECRET_KEY", "e63e2e84e1524cf81ae38ec402f92716a9b2c7966b7fb5ea615a247cb9589bac")  # Use environment variable for secret key
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'pdf', 'doc', 'docx'}
 
