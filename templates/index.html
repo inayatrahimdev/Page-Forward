@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PageForward - Empowering through Education</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="PageForward Logo">
+                <span>PageForward</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#donate">Donate</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#volunteer">Volunteer</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="title">Everyone deserves to be <span>Empowered</span>, <span>Educated</span>, and
+                    <span>Equipped</span>.
+                </h1>
+                <p class="subtitle">PageForward empowers the underprivileged with AI education, recycled resources, and
+                    hope.</p>
+                <div class="cta-buttons">
+                    <a href="#donate" class="btn btn-primary">Donate Now</a>
+                    <a href="#volunteer" class="btn btn-secondary">Apply as Volunteer</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="particles"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book & Fund Donation Section -->
+    <section id="donate" class="donation-section">
+        <div class="container">
+            <h2 class="section-title">Make a Difference Today</h2>
+            <div class="donation-cards">
+                <!-- Book Donation Card -->
+                <div class="donation-card">
+                    <div class="card-header">
+                        <div class="icon-container"><i class="icon-book"></i></div>
+                        <h3>Donate Books & Notebooks</h3>
+                    </div>
+                    <p>Your unused books can change someone's life. Register your book donations here.</p>
+                    <form id="book-donation-form" class="donation-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="book-title">Book Title/Type</label>
+                            <input type="text" id="book-title" name="book_title" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Brief Description</label>
+                            <textarea id="description" name="description" rows="3"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit Donation</button>
+                    </form>
+                </div>
+
+                <!-- Fund Donation Card -->
+                <div class="donation-card">
+                    <div class="card-header">
+                        <div class="icon-container"><i class="icon-money"></i></div>
+                        <h3>Donate Funds</h3>
+                    </div>
+                    <p>Support our mission with financial contributions. Every dollar makes a difference.</p>
+                    <div class="fund-donation-content">
+                        <div class="qr-code">
+                            <img src="{{ url_for('static', filename='images/qr-code.png') }}" alt="Donation QR Code">
+                        </div>
+                        <div class="donation-instructions">
+                            <p>We accept donations via:</p>
+                            <ul>
+                                <li>Easypaisa</li>
+                                <li>HBL</li>
+                                <li>Meezan</li>
+                                <li>UBL</li>
+                                <li>Allied</li>
+                            </ul>
+                            <p class="note">Account details will be updated soon.</p>
+                            <a href="#" class="btn btn-primary">Donate Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do / Mission Section -->
+    <section id="mission" class="mission-section">
+        <div class="container">
+            <h2 class="section-title">Our Mission at PageForward</h2>
+            <div class="mission-cards">
+                <div class="mission-card">
+                    <div class="card-icon"><i class="icon-ai"></i></div>
+                    <h3>AI Education & Workshops</h3>
+                    <p>Introducing underprivileged communities to AI technologies and tools that can empower their
+                        futures.</p>
+                </div>
+
+                <div class="mission-card">
+                    <div class="card-icon"><i class="icon-skill"></i></div>
+                    <h3>Skill Development for Students</h3>
+                    <p>Training programs focused on digital literacy, programming, and 21st-century skills.</p>
+                </div>
+
+                <div class="mission-card">
+                    <div class="card-icon"><i class="icon-recycle"></i></div>
+                    <h3>Notebook & Book Recycling</h3>
+                    <p>Collecting and redistributing educational materials to those who need them most.</p>
+                </div>
+
+                <div class="mission-card">
+                    <div class="card-icon"><i class="icon-distribute"></i></div>
+                    <h3>Donation Distribution</h3>
+                    <p>Ensuring resources reach needy families and educational institutions in underserved areas.</p>
+                </div>
+
+                <div class="mission-card">
+                    <div class="card-icon"><i class="icon-sustainable"></i></div>
+                    <h3>Sustainable Humanitarian Tech</h3>
+                    <p>Developing innovative technological solutions for humanitarian challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer / Application Form Section -->
+    <section id="volunteer" class="volunteer-section">
+        <div class="container">
+            <h2 class="section-title">Join Our Mission</h2>
+            <p class="section-subtitle">Become a volunteer and help us make a difference in communities worldwide.</p>
+
+            <div class="volunteer-form-container">
+                <form id="volunteer-form" class="volunteer-form">
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vol-email">Email Address</label>
+                        <input type="email" id="vol-email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area-of-interest">Area of Interest</label>
+                        <select id="area-of-interest" name="area_of_interest" required>
+                            <option value="">Select an option</option>
+                            <option value="AI Education">AI Education</option>
+                            <option value="Book Collection">Book Collection</option>
+                            <option value="Logistics">Logistics</option>
+                            <option value="Outreach">Outreach</option>
+                            <option value="Tech Development">Tech Development</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio">Short Bio</label>
+                        <textarea id="bio" name="bio" rows="4"
+                            placeholder="Tell us about yourself and why you want to join PageForward"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resume">Upload Resume (PDF only)</label>
+                        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+                        <div class="file-info">No file selected</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Core Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <h2 class="section-title">Our Core Team</h2>
+            <div class="team-cards">
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="{{ url_for('static', filename='images/team1.png') }}" alt="Team Member">
+                    </div>
+                    <h3>Outreach Coordinator</h3>
+                    <p>Leading our community engagement efforts and partnerships.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="icon-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="icon-email"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="{{ url_for('static', filename='images/team2.png') }}" alt="Team Member">
+                    </div>
+                    <h3>AI Research Support</h3>
+                    <p>Developing AI tools for education and humanitarian efforts.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="icon-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="icon-email"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="{{ url_for('static', filename='images/team3.png') }}" alt="Team Member">
+                    </div>
+                    <h3>Book Collection Lead</h3>
+                    <p>Managing our book recycling and distribution process.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="icon-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="icon-email"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="{{ url_for('static', filename='images/team4.png') }}" alt="Team Member">
+                    </div>
+                    <h3>Logistics Manager</h3>
+                    <p>Ensuring efficient operations and resource allocation.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="icon-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="icon-email"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71277947933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007!5e0!3m2!1sen!2sus!4v1649544137937!5m2!1sen!2sus"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="GitHub"><i class="icon-github"></i></a>
+                        <a href="#" class="social-link" title="Twitter"><i class="icon-twitter"></i></a>
+                        <a href="#" class="social-link" title="LinkedIn"><i class="icon-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="PageForward Logo">
+                    <p class="quote">"Recycling Hope, One Page at a Time."</p>
+                </div>
+
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#donate">Donate</a></li>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#volunteer">Volunteer</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="icon-github"></i></a>
+                        <a href="#" class="social-link"><i class="icon-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="icon-linkedin"></i></a>
+                    </div>
+                    <p class="copyright">&copy; 2025 PageForward. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Thank You Messages -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h3 id="modal-title">Thank You!</h3>
+            </div>
+            <div class="modal-body">
+                <p id="modal-message"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

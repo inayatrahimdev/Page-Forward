@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Page Forward</title>
+</head>
+
+<body>
+    <h2>Admin Dashboard</h2>
+    <h3>Book Donations</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Book Title</th>
+            <th>Description</th>
+            <th>Date Added</th>
+        </tr>
+        {% for donation in book_donations %}
+        <tr>
+            <td>{{ donation['name'] }}</td>
+            <td>{{ donation['email'] }}</td>
+            <td>{{ donation['book_title'] }}</td>
+            <td>{{ donation['description'] }}</td>
+            <td>{{ donation['date_added'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Volunteer Applications</h3>
+    <table>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Area of Interest</th>
+            <th>Resume</th>
+            <th>Date Added</th>
+        </tr>
+        {% for application in volunteer_applications %}
+        <tr>
+            <td>{{ application['full_name'] }}</td>
+            <td>{{ application['email'] }}</td>
+            <td>{{ application['area_of_interest'] }}</td>
+            <td><a href="{{ application['resume_path'] }}" target="_blank">View Resume</a></td>
+            <td>{{ application['date_added'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Contact Messages</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Date Added</th>
+        </tr>
+        {% for message in contact_messages %}
+        <tr>
+            <td>{{ message['name'] }}</td>
+            <td>{{ message['email'] }}</td>
+            <td>{{ message['message'] }}</td>
+            <td>{{ message['date_added'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+
+</html>
