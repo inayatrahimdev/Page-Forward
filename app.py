@@ -234,5 +234,7 @@ def logout():
 
 if __name__ == '__main__':
     with app.app_context():
-        init_db()  # Initialize database
-    app.run(debug=True)
+        init_db()  # Initialize the database
+    app.run(host='0.0.0.0', port=10000, debug=True)
+
+
